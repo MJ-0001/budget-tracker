@@ -1,14 +1,15 @@
 let transactions = [];
 let myChart;
 
-fetch("/api/transaction", {
-  method: "POST",
-  body: JSON.stringify(transaction),
-  headers: {
-    Accept: "application/json, text/plain, */*",
-    "Content-Type": "application/json"
-  }
-})
+fetch('/api/transaction')
+  .then((response) => response.json())
+  .then((data) => {
+    // save db data on global variable
+    transactions = data;
+    populateTotal();
+    populateTable();
+    populateChart();
+  })
   .then(response => {
     return response.json();
   })
@@ -151,10 +152,12 @@ function sendTransaction(isAdding) {
   });
 }
 
-document.querySelector("#add-btn").onclick = function() {
+document.querySelector("#add-btn").onclick = function(e) {
+  e.preventDefault();
   sendTransaction(true);
 };
 
 document.querySelector("#sub-btn").onclick = function() {
+  e.preventDefault();
   sendTransaction(false);
 };
