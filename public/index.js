@@ -2,7 +2,7 @@ let transactions = [];
 let myChart;
 
 fetch("/api/transaction", {
-  method: "GET",
+  method: "POST",
   body: JSON.stringify(transaction),
   headers: {
     Accept: "application/json, text/plain, */*",
