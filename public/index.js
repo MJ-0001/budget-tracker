@@ -1,19 +1,11 @@
 let transactions = [];
 let myChart;
 
-fetch('/api/transaction')
-  .then((response) => response.json())
-  .then((data) => {
-    // save db data on global variable
-    transactions = data;
-    populateTotal();
-    populateTable();
-    populateChart();
-  })
-  .then(response => {
+fetch("/api/transaction")
+  .then((response) => {
     return response.json();
   })
-  .then(data => {
+  .then((data) => {
     // save db data on global variable
     transactions = data;
 
@@ -152,12 +144,10 @@ function sendTransaction(isAdding) {
   });
 }
 
-document.querySelector("#add-btn").onclick = function(e) {
-  e.preventDefault();
+document.querySelector("#add-btn").onclick = function() {
   sendTransaction(true);
 };
 
-document.querySelector("#sub-btn").onclick = function(e) {
-  e.preventDefault();
+document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
