@@ -1,1 +1,3 @@
-# budget-tracker
+# Budget-tracker
+
+![screenshit](./media/demo.gif)
