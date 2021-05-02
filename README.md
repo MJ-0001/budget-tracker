@@ -16,7 +16,9 @@
 
 ## Description:
 
-This application dynamically tracks a user's cashflow; a balance is generated for funds paid in, and every expenditure is recorded and taken off of the balance. A dynamic bar chart graphic updates with every adjustment to visualise expenditure over time. Most importantly the app works offline, JavaScript service-worker and web-manifest scripts handle offline caching of files and data. When the app is able to connect to a network again, the data synchronises with MongoDB.
+This application dynamically tracks a user's cashflow; a balance is generated for funds paid in, and every expenditure is recorded and taken off of the balance. A chart provides visual representation of expenditure over time and updates automatically. 
+
+Most importantly the app works offline, JavaScript service-worker and web-manifest scripts handle offline caching of files and data. When the app is able to connect to a network again, the data synchronises with MongoDB.
 
 ---
 
